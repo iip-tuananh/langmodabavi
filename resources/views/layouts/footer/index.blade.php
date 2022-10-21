@@ -1,4 +1,4 @@
-<footer class="footer bg-style" style="background: linear-gradient(#258a62db, #a5cc82), url(http://127.0.0.1:8000/frontend/images/img-1.jpg); 
+<footer class="footer bg-style" style="background: linear-gradient(#258a62db, #a5cc82), url({{url('frontend/images/img-1.jpg')}}); 
 background-repeat: no-repeat;
 background-position: center;
 background-size: cover;">
