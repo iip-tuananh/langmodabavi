@@ -60,9 +60,9 @@
                </div>
                <div class="navbar-collapse collapse clearfix">
                      <ul class="navigation clearfix">
-                     <li class="current"><a href="{{route('home')}}">Trang chủ</a></li>
-                     <li class=""><a href="{{route('aboutUs')}}">Giới thiệu</a></li>
-                     <li class="dropdown">
+                     <li class="{{ Route::currentRouteName() == 'home' ? 'current' : '' }}"><a href="{{route('home')}}">Trang chủ</a></li>
+                     <li class="{{ Route::currentRouteName() == 'aboutUs' ? 'current' : '' }}"><a href="{{route('aboutUs')}}">Giới thiệu</a></li>
+                     <li class="dropdown {{ Route::currentRouteName() == 'allProduct' || Route::currentRouteName() == 'allListProCate' || Route::currentRouteName() == 'allListProType' ? 'current' : '' }}">
                         <a href="{{route('allProduct')}}">Sản phẩm <i class="fa fa-angle-right"></i></a>
                         <ul>
                            @foreach ($categoryhome as $cate)
@@ -81,8 +81,8 @@
                            @endforeach
                         </ul>
                      </li>
-                     <li class=""><a href="{{route('listService')}}">Công trình thi công</a></li>
-                     <li class="dropdown">
+                     <li class="{{ Route::currentRouteName() == 'listService' ? 'current' : '' }}"><a href="{{route('listService')}}">Công trình thi công</a></li>
+                     <li class="dropdown {{ Route::currentRouteName() == 'allListBlog' || Route::currentRouteName() == 'listCateBlog' ? 'current' : '' }}">
                         <a href="{{route('allListBlog')}}">Tin tức <i class="fa fa-angle-right"></i></a>
                         <ul>
                            @foreach ($blogCate as $cate)
@@ -90,7 +90,7 @@
                            @endforeach
                         </ul>
                      </li>
-                     <li class=""><a href="{{route('lienHe')}}">Liên hệ</a></li>
+                     <li class="{{ Route::currentRouteName() == 'lienHe' ? 'current' : '' }}"><a href="{{route('lienHe')}}">Liên hệ</a></li>
                      </ul>
                      <ul class="mobile-menu clearfix hidden-lg hidden-md">
                      <li><a href="{{route('home')}}">Trang chủ</a></li>
